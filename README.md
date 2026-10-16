@@ -41,3 +41,5 @@ src/
 └── StudentService.java  # CRUD logic
 doc/                     # Screenshots and run logs
 ```
+## How it looks like
+<img width="1040" height="422" alt="image" src="https://github.com/user-attachments/assets/0942c7fc-6592-46fa-8e5d-d73ad500f586" />
