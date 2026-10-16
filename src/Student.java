@@ -31,6 +31,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "学号: " + id + ", 姓名: " + name + ", 年龄: " + age;
+        return "Student ID: " + id + ", Name: " + name + ", Age: " + age;
     }
 }

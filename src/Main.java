@@ -8,14 +8,14 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println();
-            System.out.println("===== 学生管理系统 =====");
-            System.out.println("1. 添加学生");
-            System.out.println("2. 查看所有学生");
-            System.out.println("3. 按学号查询");
-            System.out.println("4. 修改学生");
-            System.out.println("5. 删除学生");
-            System.out.println("0. 退出");
-            System.out.print("请选择: ");
+            System.out.println("===== Student Manage System (Classic Java Final Project) =====");
+            System.out.println("1. Add Student");
+            System.out.println("2. Check all Students");
+            System.out.println("3. Select from Student ID");
+            System.out.println("4. Change smth for Student");
+            System.out.println("5. Delete Student");
+            System.out.println("0. Exit");
+            System.out.print("Please Select (0-5): ");
 
             String choice = scanner.nextLine().trim();
             switch (choice) {
@@ -25,26 +25,26 @@ public class Main {
                 case "4" -> update();
                 case "5" -> delete();
                 case "0" -> {
-                    System.out.println("再见！");
+                    System.out.println("Bye!");
                     return;
                 }
-                default -> System.out.println("无效选项，请重新输入");
+                default -> System.out.println("Please choose a correct number");
             }
         }
     }
 
     private static void add() {
-        System.out.print("姓名: ");
+        System.out.print("Name and Surname: ");
         String name = scanner.nextLine().trim();
-        int age = readInt("年龄: ");
+        int age = readInt("Age: ");
         Student s = service.add(name, age);
-        System.out.println("添加成功 -> " + s);
+        System.out.println("Add Successfully -> " + s);
     }
 
     private static void listAll() {
         List<Student> list = service.findAll();
         if (list.isEmpty()) {
-            System.out.println("暂无学生");
+            System.out.println("Temporarily no student");
             return;
         }
         for (Student s : list) {
@@ -53,37 +53,37 @@ public class Main {
     }
 
     private static void findOne() {
-        int id = readInt("学号: ");
+        int id = readInt("Student ID: ");
         Student s = service.findById(id);
-        System.out.println(s == null ? "没有找到该学生" : s.toString());
+        System.out.println(s == null ? "Didn't find this student" : s.toString());
     }
 
     private static void update() {
-        int id = readInt("要修改的学号: ");
+        int id = readInt("Student ID you want to change: ");
         if (service.findById(id) == null) {
-            System.out.println("没有找到该学生");
+            System.out.println("Didn't find this student");
             return;
         }
-        System.out.print("新姓名: ");
+        System.out.print("New name: ");
         String name = scanner.nextLine().trim();
-        int age = readInt("新年龄: ");
+        int age = readInt("New age: ");
         service.update(id, name, age);
-        System.out.println("修改成功");
+        System.out.println("Change Successfully");
     }
 
     private static void delete() {
-        int id = readInt("要删除的学号: ");
-        System.out.println(service.delete(id) ? "删除成功" : "没有找到该学生");
+        int id = readInt("Student ID you want to delete: ");
+        System.out.println(service.delete(id) ? "Delete Successfully" : "Didn't find this student");
     }
 
-    // 读取整数，输错了就重新输入
+    // Read an integer; ask again until the input is a valid number
     private static int readInt(String prompt) {
         while (true) {
             System.out.print(prompt);
             try {
                 return Integer.parseInt(scanner.nextLine().trim());
             } catch (NumberFormatException e) {
-                System.out.println("请输入数字");
+                System.out.println("Please enter a number");
             }
         }
     }

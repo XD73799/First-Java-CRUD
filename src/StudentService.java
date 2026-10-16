@@ -5,19 +5,19 @@ public class StudentService {
     private final List<Student> students = new ArrayList<>();
     private int nextId = 1;
 
-    // 增
+    // Create
     public Student add(String name, int age) {
         Student s = new Student(nextId++, name, age);
         students.add(s);
         return s;
     }
 
-    // 查（全部）
+    // Read (all)
     public List<Student> findAll() {
         return students;
     }
 
-    // 查（按学号）
+    // Read (by ID)
     public Student findById(int id) {
         for (Student s : students) {
             if (s.getId() == id) {
@@ -27,7 +27,7 @@ public class StudentService {
         return null;
     }
 
-    // 改
+    // Update
     public boolean update(int id, String name, int age) {
         Student s = findById(id);
         if (s == null) {
@@ -38,7 +38,7 @@ public class StudentService {
         return true;
     }
 
-    // 删
+    // Delete
     public boolean delete(int id) {
         Student s = findById(id);
         if (s == null) {

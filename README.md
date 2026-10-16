@@ -1,13 +1,13 @@
-# 学生管理系统（Java CRUD）
+# Student Management System (Java CRUD)
 
-一个控制台版的学生管理系统，支持学生信息的增、删、改、查。
+A console-based student management system that supports creating, reading, updating and deleting student records.
 
-## 环境要求
+## Requirements
 
-- JDK 17 及以上
-- 不需要安装 Maven，项目自带 Maven Wrapper（首次运行会自动下载 Maven）
+- JDK 17 or later
+- No Maven installation needed: the project ships with the Maven Wrapper, which downloads Maven on first run
 
-## 构建与运行
+## Build and run
 
 ```bash
 # macOS / Linux
@@ -19,25 +19,25 @@ mvnw.cmd package
 java -jar target\java-crud-1.0-SNAPSHOT.jar
 ```
 
-也可以用 IntelliJ IDEA 直接打开项目根目录（会识别为 Maven 项目），运行 `Main`。
+You can also open the project root in IntelliJ IDEA (it is detected as a Maven project) and run `Main`.
 
-## 功能
+## Features
 
-| 菜单 | 功能 |
+| Option | Function |
 | --- | --- |
-| 1 | 添加学生 |
-| 2 | 查看所有学生 |
-| 3 | 按学号查询 |
-| 4 | 修改学生 |
-| 5 | 删除学生 |
-| 0 | 退出 |
+| 1 | Add student |
+| 2 | List all students |
+| 3 | Find student by ID |
+| 4 | Update student |
+| 5 | Delete student |
+| 0 | Exit |
 
-## 项目结构
+## Project structure
 
 ```
 src/
-├── Main.java            # 控制台菜单与输入处理
-├── Student.java         # 学生实体
-└── StudentService.java  # 增删改查逻辑
-doc/                     # 运行截图与日志
+├── Main.java            # Console menu and input handling
+├── Student.java         # Student entity
+└── StudentService.java  # CRUD logic
+doc/                     # Screenshots and run logs
 ```
