@@ -8,8 +8,8 @@ public class Main {
     public static void main(String[] args) {
         while (true) {
             System.out.println();
-            System.out.println("===== Student Manage System (Classic Java Final Project) =====");
-            System.out.println("1. Add Student");
+            System.out.println("===== Student Manage System (Classic Java Final Project with Team Project Update) =====");
+            System.out.println("1. Add new Student");
             System.out.println("2. Check all Students");
             System.out.println("3. Select from Student ID");
             System.out.println("4. Change smth for Student");
@@ -44,7 +44,7 @@ public class Main {
     private static void listAll() {
         List<Student> list = service.findAll();
         if (list.isEmpty()) {
-            System.out.println("Temporarily no student");
+            System.out.println("The student database is currently empty.");
             return;
         }
         for (Student s : list) {
